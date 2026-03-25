@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* Tipografia */
+  --font-family: 'Nunito', sans-serif;
+
+  /* Shadows */
+  --sombra-100: 0 5px 10px -1px rgba(174, 174, 174, 0.10);
+  --sombra-200: 0 5px 20px -2px rgba(174, 174, 174, 0.20);
+  --sombra-300: 0 5px 30px -3px rgba(174, 174, 174, 0.30);
+  --sombra-400: 0 5px 40px -4px rgba(174, 174, 174, 0.40);
+  --sombra-500: 0 5px 50px -5px rgba(174, 174, 174, 0.50);
+  --sombra-600: 0 5px 60px -6px rgba(174, 174, 174, 0.60);
+  --sombra-700: 0 5px 70px -7px rgba(174, 174, 174, 0.70);
+  --sombra-800: 0 5px 80px -8px rgba(174, 174, 174, 0.80);
+  --sombra-900: 0 5px 90px -9px rgba(174, 174, 174, 0.90);
+
+  /* White */
+  --blanco-50: #FCFCFC;
+  --blanco-100: #F5F5F5;
+  --blanco-200: #F0F0F0;
+  --blanco-300: #E9E9E9;
+  --blanco-400: #E5E5E5;
+  --blanco-500: #DEDEDE;
+  --blanco-600: #CACACA;
+  --blanco-700: #9E9E9E;
+  --blanco-800: #7A7A7A;
+  --blanco-900: #5D5D5D;
+  
+  /* Black */
+  --negro-50: #E7E7E7;
+  --negro-100: #B5B6B4;
+  --negro-200: #929290;
+  --negro-300: #60605D;
+  --negro-400: #41413D;
+  --negro-500: #11120D;
+  --negro-600: #0F100C;
+  --negro-700: #0C0D09;
+  --negro-800: #090A07;
+  --negro-900: #070805;
+
+  /* Blue */
+  --azul-50: #E6F4FF;
+  --azul-100: #B0DEFF;
+  --azul-200: #8ACEFF;
+  --azul-300: #54B8FF;
+  --azul-400: #33AAFF;
+  --azul-500: #0095FF;
+  --azul-600: #0088E8;
+  --azul-700: #006AB5;
+  --azul-800: #00528C;
+  --azul-900: #003F6B;
+
+  /* Yellow */
+  --amarillo-50: #FFF7E6;
+  --amarillo-100: #FFE5B0;
+  --amarillo-200: #FFD88A;
+  --amarillo-300: #FFC654;
+  --amarillo-400: #FFBB33;
+  --amarillo-500: #FFAA00;
+  --amarillo-600: #E89B00;
+  --amarillo-700: #B57900;
+  --amarillo-800: #8C5E00;
+  --amarillo-900: #6B4700;
+
+  /* Green */
+  --verde-50: #ECF8EF;
+  --verde-100: #C5E9CD;
+  --verde-200: #A9DEB4;
+  --verde-300: #81CF92;
+  --verde-400: #69C57D;
+  --verde-500: #43B75D;
+  --verde-600: #3DA755;
+  --verde-700: #308242;
+  --verde-800: #256533;
+  --verde-900: #1C4D27;
+
+  /* Red */
+  --rojo-50: #FDECEC;
+  --rojo-100: #FAC5C3;
+  --rojo-200: #F7A9A7;
+  --rojo-300: #F4827E;
+  --rojo-400: #F16965;
+  --rojo-500: #EE443F;
+  --rojo-600: #D93E39;
+  --rojo-700: #A9302D;
+  --rojo-800: #832523;
+  --rojo-900: #641D1A;
+
+}
