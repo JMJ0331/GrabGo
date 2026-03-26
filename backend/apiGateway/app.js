@@ -17,11 +17,11 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, '/src')));
 
 app.get('/', (req, res) => {
-    res.send('Products');
+    res.send('apiGateway');
 });
 
 app.listen(port, () => {
-    console.log(`Products esta ejecutandose... http://localhost:${port}`);
+    console.log(`apiGateway esta ejecutandose... http://localhost:${port}`);
 });
 
 console.log(db);
