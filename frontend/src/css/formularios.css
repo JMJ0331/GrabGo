@@ -1,60 +1,71 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
-@import url('./variables.css');  
+@import url('./variables.css');
 
 
 /* Centrado total de la tarjeta 📦 */
 body {
-    margin: 0;
-    padding: 0;
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
-    background-color: #fdfdfd;
+    height: 100dvh;
+    background-color: var(--blanco-50);
     font-family: 'Nunito', sans-serif;
 }
 
 /* El contenedor principal  📦 */
 .container {
-    background-color: #f26d64;
-    /* El rojo de tu imagen */
-    width: 100%;
+    max-width: 1400px;
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.formulario {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
     max-width: 400px;
-    padding: 40px;
+    width: 90%;
+    background-color: var(--rojo-400);
+    padding: 5.5rem 4rem;
+    text-align: center;
     border-radius: 15px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    color: white;
+    color: var(--blanco-50);
+
 }
 
 /* Título 🎯 */
 .tituloPrincipal {
-    font-size: 2.8rem;
-    margin-top: 0;
-    margin-bottom: 30px;
-    font-weight: 500;
+    font-size: 3.6rem;
+    margin-bottom: 1.4rem;
+    font-weight: 400;
     font-family: 'Nunito', sans-serif;
+}
+
+.container-input{
+    display: flex;
+    flex-direction: column;
 }
 
 /* Labels (Usuario, Correo, etc.) 🥸*/
 .nombreInput {
-    display: flex;
     text-align: left;
-    font-size: 1.1rem;
-    
+    font-size: 2.2rem;
+
 }
 
 /* Estilo de los Inputs  👌*/
-input[type="text"] {
+.datos {
     width: 100%;
-    padding: 12px 15px;
-    margin-bottom: 25px;
+    padding: 1.5rem 1.8rem;
+    margin-bottom: 1rem;
     border: 2px solid white;
     border-radius: 10px;
     background: transparent;
     color: var(--blanco-50);
-    font-size: 1rem;
-    box-sizing: border-box;
+    font-size: 1.6rem;
     /* Evita que el input se pase del borde */
     outline: none;
 }
@@ -62,31 +73,59 @@ input[type="text"] {
 /* Estilo específico para el botón 🛎️ */
 #btnEnviar {
     width: 100%;
-    padding: 15px;
-    
+    padding: 1.5rem;
+    background-color: var(--blanco-50);
     color: #501b1b;
     /* Texto oscuro */
     border: none;
     border-radius: 10px;
-    font-size: 1.4rem;
+    font-size: 1.8rem;
     cursor: pointer;
     font-weight: bold;
-    margin-top: 10px;
+    margin-top: 1.2rem;
     transition: background 0.3s;
 }
 
-#btnEnviar:hover {
-    background-color: #f0f0f0;
+#btnEnviar:hover, #btn-enviar:active {
+    background-color: var(--blanco-100);
 }
 
 /* Enlace inferior 👇*/
 .redireccion {
     display: block;
-    margin-top: 25px;
+    margin-top: 2rem;
     color: white;
     text-decoration: underline;
-    font-size: 1rem;
+    font-size: 1.6rem;
 }
+
 input::placeholder {
-    color: #ffffffcc;
+    color: var(--negro-50);
+}
+
+/* MEDIA QUERIES */
+
+@media (max-width: 48rem) {
+
+    :root{
+        font-size: 56.25%;
+    }
+    
+}
+
+@media (max-width: 27rem) {
+
+    :root{
+        font-size: 50%;
+    }
+    
+}
+
+
+@media (max-width: 20rem) {
+
+    :root{
+        font-size: 43.75%;
+    }
+    
 }

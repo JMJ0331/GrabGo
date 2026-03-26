@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../src/css/registrate.css">
+    <link rel="stylesheet" href="../src/css/formularios.css">
     <title>GrabGo | Login</title>
 </head>
 
@@ -16,11 +16,21 @@
 
             <h1 class="tituloPrincipal">Grab & Go</h1>
 
-            <label for="userName" class="nombreInput">Usuario</label>
-            <input type="text" id="userName" name="userName" placeholder="Usuario" required>
+            <div class="container-input">
 
-            <label for="contrasena" class="nombreInput">Contraseña</label>
-            <input type="text" id="contrasena" name="contrasena" placeholder="Contraseña" required>
+                <label for="userName" class="nombreInput">Usuario</label>
+                <input type="text" id="userName" class="datos" name="userName" placeholder="Usuario" required
+                    autocomplete="off">
+
+            </div>
+
+            <div class="container-input">
+
+                <label for="contrasena" class="nombreInput">Contraseña</label>
+                <input type="password" id="contrasena" class="datos" name="contrasena" placeholder="Contraseña" required
+                    autocomplete="off">
+
+            </div>
 
             <button type="submit" id="btnEnviar">Iniciar sesión</button>
 
@@ -34,4 +44,5 @@
     <script src="/js/script.js"></script>
 
 </body>
+
 </html>

@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="../css/registrate.css">
+    <link rel="stylesheet" href="../css/formularios.css">
     <title>GrabGo | Register</title>
 </head>
 
@@ -18,14 +18,33 @@
 
             <h1 class="tituloPrincipal">Grab & Go</h1>
 
-            <label for="userName" class="nombreInput">Nombre:</label>
-            <input type="text" id="userName" name="userName" placeholder="Ingrese su nombre" required>
+            <div class="container-input">
 
-            <label for="correo" class="nombreInput">Correo:</label>
-            <input type="text" id="correo" name="correo" placeholder="Ingrese su correo" required>
+                <label for="userName" class="nombreInput">Nombre</label>
+                <input type="text" id="userName" class="datos" name="userName" placeholder="Ingrese su nombre" required>
 
-            <label for="contrasena" class="nombreInput">Contraseña:</label>
-            <input type="text" id="contrasena" name="contrasena" placeholder="Ingrese su contraseña" required>
+            </div>
+
+            <div class="container-input">
+
+                <label for="correo" class="nombreInput">Correo</label>
+                <input type="text" id="correo" class="datos" name="correo" placeholder="Ingrese su correo" required>
+
+            </div>
+
+            <div class="container-input">
+
+                <label for="contrasena" class="nombreInput">Contraseña</label>
+                <input type="text" id="contrasena" class="datos" name="contrasena" placeholder="Ingrese su contraseña"
+                    required>
+
+            </div>
+
+
+
+
+
+
 
             <button type="submit" id="btnEnviar">Registrarse</button>
 
