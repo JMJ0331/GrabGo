@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/formularios.css">
+    <link rel="stylesheet" href="css/formularios.css">
     <title>GrabGo | Login</title>
 </head>
 
@@ -21,24 +21,25 @@
                 <label for="userName" class="nombreInput">Usuario</label>
                 <input type="text" id="userName" class="datos" name="userName" placeholder="Usuario" required
                     autocomplete="off">
-
+             <p id="errorUsuario" class="error"></p>
             </div>
 
             <div class="container-input">
 
             <label for="contrasena" class="nombreInput">Contraseña</label>
             <input type="text" id="contrasena" name="contrasena" placeholder="Contraseña" required class="datos">
-
+            <p id="errorContrasena" class="error"></p>
             <button type="submit" id="btnEnviar">Iniciar sesión</button>
-
+            
             <a href="./html/registerApp.html" class="redireccion">
                 ¿No tienes una cuenta?
             </a>
+            </div>
 
         </form>
     </div>
 
-    <script src="/js/script.js"></script>
+    <script src="js/index.js"></script>
 
 </body>
 

@@ -14,34 +14,35 @@
 
     <div class="container">
 
-        <form action="" method="post" class="formulario">
+     <form id="registerForm" class="formulario">
 
-            <h1 class="tituloPrincipal">Grab & Go</h1>
+    <h1 class="tituloPrincipal">Grab & Go</h1>
 
-            <div class="container-input">
-
-                <label for="userName" class="nombreInput">Nombre</label>
-                <input type="text" id="userName" class="datos" name="userName" placeholder="Ingrese su nombre" required>
-
-            </div>
-
-            <div class="container-input">
-
-                <label for="correo" class="nombreInput">Correo</label>
-                <input type="text" id="correo" class="datos" name="correo" placeholder="Ingrese su correo" required>
-
-            <label for="contrasena" class="nombreInput">Contraseña:</label>
-            <input type="text" id="contrasena" name="contrasena" placeholder="Ingrese su contraseña" class="datos" required>
-
-            <button type="submit" id="btnEnviar">Registrarse</button>
-
-            <a href="../index.html" class="redireccion" id="registro">¿Ya tienes una cuenta?</a>
-
-        </form>
+    <div class="container-input">
+        <label for="userName" class="nombreInput">Nombre</label>
+        <input type="text" id="userName" class="datos" placeholder="Ingrese su nombre">
+        <p id="errorUsuario" class="error"></p>
     </div>
 
+    <div class="container-input">
+        <label for="correo" class="nombreInput">Correo</label>
+        <input type="text" id="correo" class="datos" placeholder="Ingrese su correo">
+        <p id="errorCorreo" class="error"></p>
+    </div>
 
+    <div class="container-input">
+        <label for="contrasena" class="nombreInput">Contraseña</label>
+        <input type="text" id="contrasena" class="datos" placeholder="Ingrese su contraseña">
+        <p id="errorContrasena" class="error"></p>
+    </div>
 
+    <button type="submit" id="btnEnviar">Registrarse</button>
+
+</form>
+    </div>
+
+ <script src="../js/registo.js"></script>
+  
 </body>
 
 </html>
