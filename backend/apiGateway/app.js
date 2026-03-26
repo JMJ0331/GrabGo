@@ -4,6 +4,7 @@ import { fileURLToPath } from "url";
 import bcrypt from "bcrypt";
 import config from "dotenv/config";
 import jwt from "jsonwebtoken";
+import json from "express";
 import { routerAuth } from "../auth/routes/auth.routes.js";
 
 config;
