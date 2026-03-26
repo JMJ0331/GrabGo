@@ -104,6 +104,27 @@ input::placeholder {
     color: var(--negro-50);
 }
 
+
+.error {
+    color: #ffdede;
+    font-size: 1.5rem;
+    text-align: left;
+    margin-top: 0.3rem;
+    opacity: 0;
+    transition: 0.3s ease;
+}
+
+
+.error.mostrar {
+    opacity: 1;
+}
+
+
+.input-error {
+    border: 2px solid #ff4d4d;
+}
+
+
 /* MEDIA QUERIES */
 
 @media (max-width: 48rem) {
