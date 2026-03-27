@@ -38,4 +38,7 @@ formulario.addEventListener('submit', function(e) {
         valido = false;
 
     }
+     if(valido){
+        formulario.submit();
+    }
 });

@@ -46,4 +46,7 @@ formulario.addEventListener('submit', function(e) {
         contrasenaInput.classList.add('input-error', 'vibrar');
         valido = false;
     }
+    if(valido){
+        formulario.submit();
+    }
 });
