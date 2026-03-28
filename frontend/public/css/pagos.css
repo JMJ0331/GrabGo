@@ -1,0 +1,264 @@
+@import url('variables.css');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--font-family); 
+}
+
+html {
+    font-size: 62.5%; /* 1rem = 10px */
+}
+
+body {
+    background-color: var(--blanco-100);
+    color: var(--negro-500);
+    font-size: 1.6rem; /* 16px - Tamaño base legible */
+}
+
+/* Header */
+.header {
+    background-color: var(--rojo-400);
+    color: var(--blanco-50);
+    padding: 1.5rem 5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    color: var(--negro-900); 
+    font-size: 2.5rem;
+    font-weight: 800;
+}
+
+.nav a {
+    color: var(--blanco-50);
+    font-size: 1.6rem;
+    text-decoration: none;
+    margin-left: 2rem;
+}
+
+/* Botón Salir */
+.nav a:last-child {
+    background: white;
+    color: var(--negro-500);
+    padding: 0.8rem 2rem;
+    border-radius: 0.5rem;
+}
+
+/* Título con línea larga */
+.cabecera-carrito {
+    max-width: 120rem; /* 1200px */
+    margin: 3rem auto 0;
+    padding: 0 2rem;
+}
+
+.cabecera-carrito h2 {
+    font-size: 2rem; /* 20px */
+    font-weight: 800;
+    padding-bottom: 1.5rem;
+    border-bottom: 0.2rem solid var(--negro-500);
+    width: 100%;
+}
+
+/* Layout */
+.contenido {
+    max-width: 120rem;
+    margin: 3rem auto;
+    display: flex;
+    gap: 4rem;
+    padding: 0 2rem;
+}
+
+.productos {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+/* Tarjeta de Producto */
+.producto-item {
+    display: flex;
+    background: white;
+    border-radius: 1.5rem;
+    overflow: hidden;
+    height: 18rem; /* 180px */
+    box-shadow: var(--sombra-200);
+}
+
+.img-placeholder {
+    width: 22rem;
+    background-color: var(--blanco-400);
+    background-image: url('../images/fcf658f0027e263090fa7c9e2f4c5035.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.info {
+    padding: 2rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.info h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+.info p {
+    font-size: 1.4rem;
+    color: var(--blanco-800);
+    margin-bottom: 0.5rem;
+}
+
+/* Resumen de Pago */
+.resumen {
+    width: 38rem;
+}
+
+.resumen-box {
+    background: white;
+    padding: 3rem;
+    border-radius: 1.5rem;
+    box-shadow: var(--sombra-300);
+    text-align: center;
+}
+
+.icono-placeholder {
+    width: 6rem;
+    height: 6rem;
+    margin: 0 auto 2rem;
+    background-image: url('../images/cash-or-credit-cash-credit-loan-svgrepo-com.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.totales {
+    border-top: 0.1rem solid var(--blanco-300);
+    padding-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.totales p {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.6rem;
+    margin-bottom: 1.2rem;
+}
+
+.btn {
+    background-color: var(--azul-500);
+    color: white;
+    border: none;
+    padding: 1.5rem;
+    border-radius: 1rem;
+    font-weight: 800;
+    font-size: 1.6rem;
+    width: 100%;
+    cursor: pointer;
+    margin-bottom: 2rem;
+}
+
+/* Botones Apple/Google */
+.metodos {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+/* Contenedor de los logos de pago */
+.btn-apple,
+.btn-google {
+    width: 10rem;           /* 100px */
+    height: 5rem;          /* 50px */
+    
+    border-radius: 0.8rem;
+    background-color: white;
+    cursor: pointer;
+    
+    /* PROPIEDADES CLAVE PARA QUE SE VEA LA IMAGEN */
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 70%; /* Esto ajusta el logo dentro del cuadro */
+    display: inline-block; /* Asegura que respete el tamaño */
+}
+
+.btn-apple {
+    /* Revisa que el nombre del archivo sea EXACTAMENTE igual */
+    background-image: url('../images/apple-pay-svgrepo-com.svg');
+}
+
+.btn-google {
+    background-image: url('../images/google-pay-svgrepo-com.svg');
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .contenido {
+        flex-direction: column;
+    }
+    .resumen {
+        width: 100%;
+    }
+}
+/* Responsive - Ajustes para Tablets y Móviles */
+@media (max-width: 800px) {
+    .header {
+        flex-direction: column; /* Apila logo y menú */
+        padding: 1rem 2rem;
+        gap: 1rem;
+    }
+
+    .nav a {
+        font-size: 1.4rem;
+        margin: 0 1rem; /* Espaciado uniforme */
+    }
+
+    .nav a:last-child {
+        padding: 0.5rem 1.5rem; /* Botón salir más pequeño */
+    }
+
+    .contenido {
+        flex-direction: column; /* Apila productos y pago */
+        align-items: center;    /* Centra los bloques */
+        gap: 2rem;              /* Menos espacio entre bloques */
+        padding: 0 1.5rem;
+    }
+
+    .productos {
+        flex: 1 1 100%;        /* Ocupa todo el ancho */
+        max-width: 100%;
+    }
+
+    /* Adaptación de la tarjeta */
+    .producto-item {
+        flex-direction: column; /* Imagen arriba, texto abajo */
+        height: auto;          /* Altura automática */
+    }
+
+    .img-placeholder {
+        width: 100%;
+        height: 14rem;         /* Imagen ancha pero no tan alta */
+    }
+
+    .info {
+        padding: 1.5rem;
+        text-align: center;    /* Centra el texto */
+    }
+
+    /* Sección Resumen */
+    .resumen {
+        width: 100%;           /* Pago a ancho completo */
+        margin-top: 0;         /* Elimina margen grande de PC */
+        order: 2;              /* Asegura que el pago vaya al final */
+    }
+
+    .cabecera-carrito h2 {
+        font-size: 1.6rem;     /* Título más pequeño */
+    }
+}
