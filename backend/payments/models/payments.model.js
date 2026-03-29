@@ -5,11 +5,10 @@ import { fileURLToPath } from 'url';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-
 export const paymentsModel = (req, res) => {
     const objeto = path.join(__dirname, '..', "src",'db', 'metodoPagosRegistrados.json');
     const { userName , numeracion, nvv} = req.body
-    const Datosinput = {Nombre: userName, Numero: numeracion, NVV: nvv}
+    const Datosinput = {Nombre: userName, Numero: numeracion, NVV: nvv, Fecha: new Date().toLocaleDateString()}
     const nuevo = {payments: []}
     if (fs.existsSync(objeto)) {
         console.log("Se encontro el archivo")
