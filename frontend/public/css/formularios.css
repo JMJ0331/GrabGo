@@ -40,7 +40,7 @@ body {
 .tituloPrincipal {
     font-size: 3.6rem;
     margin-bottom: 1.4rem;
-    font-weight: 400;
+    font-weight: bolder;
     font-family: 'Nunito', sans-serif;
 }
 
@@ -53,6 +53,7 @@ body {
 .nombreInput {
     text-align: left;
     font-size: 2.2rem;
+    font-weight: 500;
 
 }
 
@@ -76,11 +77,12 @@ body {
     width: 100%;
     padding: 1.5rem;
     background-color: var(--blanco-50);
-    color: #501b1b;
+    color: var(--negro-500);
     /* Texto oscuro */
     border: none;
     border-radius: 10px;
     font-size: 1.8rem;
+    font-weight: 500;
     cursor: pointer;
     font-weight: bold;
     margin-top: 1.2rem;
