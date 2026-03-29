@@ -37,6 +37,7 @@ services:
       - "3003:3003"
     environment:
       - PORT=3003
+      - JWT_SECRET=tu_clave_secreta_aqui
 
   payments:
     build: ./payments

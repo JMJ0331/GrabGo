@@ -1,27 +1,39 @@
-import express from "express";
-import path, { dirname } from "path";
-import { fileURLToPath } from "url";
-import bcrypt from "bcrypt";
-import config from "dotenv/config";
-import jwt from "jsonwebtoken";
-import db from './src/db/usuariosRegistrados.json' with { type: 'json' };
+import express from 'express';
+import { config } from 'dotenv';
+import orderRoutes from './src/routes/orderRoutes.js';
 
-config;
+config();
+
 const app = express();
-const port = process.env.PORT;
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
+const PORT = process.env.PORT || 3003;
 
-app.use(express.json())
+app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(express.static(path.join(__dirname, '/src')));
+
+app.get('/health', (req, res) => {
+  res.status(200).json({ status: 'ok', service: 'order-service', port: PORT });
+});
+
+app.use('/ordenes', orderRoutes);
 
 app.get('/', (req, res) => {
-    res.send('Orders');
+  res.json({
+    service: 'order-service',
+    version: '1.0.0',
+    endpoints: [
+      'GET    /ordenes            (token)',
+      'GET    /ordenes/:id        (token)',
+      'POST   /ordenes            (token)',
+      'PATCH  /ordenes/:id/estado (admin)',
+      'DELETE /ordenes/:id        (token)',
+    ],
+  });
 });
 
-app.listen(port, () => {
-    console.log(`Orders esta ejecutandose... http://localhost:${port}`);
+app.use((req, res) => {
+  res.status(404).json({ error: `Ruta ${req.method} ${req.path} no encontrada` });
 });
 
-console.log(db);
+app.listen(PORT, () => {
+  console.log(`order-service ejecutandose en http://localhost:${PORT}`);
+});

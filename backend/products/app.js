@@ -1,27 +1,41 @@
-import express from "express";
-import path, { dirname } from "path";
-import { fileURLToPath } from "url";
-import bcrypt from "bcrypt";
-import config from "dotenv/config";
-import jwt from "jsonwebtoken";
-import db from './src/db/usuariosRegistrados.json' with { type: 'json' };
+import express from 'express';
+import { config } from 'dotenv';
+import productRoutes from './src/routes/productRoutes.js';
 
-config;
+config();
+
 const app = express();
-const port = process.env.PORT;
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
+const PORT = process.env.PORT || 3002;
 
-app.use(express.json())
+app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(express.static(path.join(__dirname, '/src')));
+
+app.get('/health', (req, res) => {
+  res.status(200).json({ status: 'ok', service: 'product-service', port: PORT });
+});
+
+app.use('/productos', productRoutes);
 
 app.get('/', (req, res) => {
-    res.send('Products');
+  res.json({
+    service: 'product-service',
+    version: '1.0.0',
+    endpoints: [
+      'GET    /productos',
+      'GET    /productos/:id',
+      'GET    /productos/:id/disponibilidad',
+      'POST   /productos          (admin)',
+      'PUT    /productos/:id      (admin)',
+      'DELETE /productos/:id      (admin)',
+      'PATCH  /productos/:id/stock',
+    ],
+  });
 });
 
-app.listen(port, () => {
-    console.log(`Products esta ejecutandose... http://localhost:${port}`);
+app.use((req, res) => {
+  res.status(404).json({ error: `Ruta ${req.method} ${req.path} no encontrada` });
 });
 
-console.log(db);
+app.listen(PORT, () => {
+  console.log(`product-service ejecutandose en http://localhost:${PORT}`);
+});
