@@ -23,6 +23,10 @@ app.get('/', (req, res) => {
     res.send('Payments');
 });
 
+app.get('/registro', (req, res) => {
+    res.sendFile(path.join(__dirname, '../../frontend/public/html/TarjetaApp.html'));
+});
+
 app.post('/registro', paymentsModel);
 
 app.listen(port, () => {
