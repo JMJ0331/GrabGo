@@ -16,3 +16,8 @@ inputNumeracion.addEventListener('input', (tecla) => {
     tecla.target.value = valorFormateado;
 });
 
+const input= document.querySelector('#btnEnviar');
+input.addEventListener('click', (e) => {
+    alert('¡Gracias por tu compra!');
+});
+

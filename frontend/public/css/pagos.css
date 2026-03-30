@@ -3,7 +3,6 @@
 
 html {
     font-size: 62.5%;
-    /* 1rem = 10px */
 }
 
 * {
@@ -24,7 +23,6 @@ body {
 
 
 .container {
-    height: auto;
     max-width: 1400px;
     width: 90%;
     display: flex;
@@ -38,11 +36,10 @@ body {
 /* Header */
 .header {
     background-color: var(--rojo-400);
-    color: var(--blanco-50);
     padding: 1.5rem;
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: baseline;
 }
 
 .logo a {
@@ -52,26 +49,20 @@ body {
     color: var(--negro-900);
 }
 
-
-
 .nav {
     display: flex;
-    justify-content: center;
     align-items: baseline;
     gap: 2rem;
 }
 
 .nav a {
-    height: 100%;
     color: var(--blanco-50);
     font-size: 1.6rem;
     font-weight: bold;
     text-decoration: none;
 }
 
-/* Botón Salir */
 .nav a:last-child {
-    height: min-content;
     background: white;
     color: var(--negro-500);
     padding: 0.8rem 2rem;
@@ -272,7 +263,7 @@ body {
 /* Botones Apple/Google */
 .metodos {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
     gap: 1.5rem;
     border-top: 1px solid var(--blanco-500);
     padding-top: 1.5rem;
@@ -281,10 +272,10 @@ body {
 
 /* Contenedor de los logos de pago */
 .btn-apple,
-.btn-google {
+.btn-google, .btn-paypal {
     display: inline;
     width: 1rem;
-    padding: 3rem 4rem;
+    padding: 3rem 3rem;
     border-radius: 8px;
     background-color: white;
     cursor: pointer;
@@ -305,6 +296,17 @@ body {
 
 .btn-google {
     background-image: url('../images/google-pay-svgrepo-com.svg');
+}
+
+.btn-paypal{
+    background-image: url(../images/paypal-svgrepo-com.svg);
+}
+
+.menu-toggle {
+    display: none;
+    font-size: 2.5rem;
+    cursor: pointer;
+    color: white;
 }
 
 /* Responsive */
@@ -329,9 +331,6 @@ body {
 }
 
 @media (max-width: 750px) {
-    .header {
-        flex-direction: column;
-    }
 
     .contenido {
         flex-direction: column;
@@ -351,10 +350,58 @@ body {
 
 }
 
-@media (max-width: 425px) {
-    :root {
-        font-size: 43.75%;
+
+@media (max-width: 520px) {
+
+    body {
+        align-items: flex-start;
     }
+
+
+    .header {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+
+    .menu-toggle {
+        display: block;
+    }
+
+    /* NAV OCULTO */
+    .nav {
+        position: absolute;
+        top: 55px;
+        right: 0;
+        background: var(--rojo-400);
+        width: 120px;
+        flex-direction: column;
+        align-items: flex-start;
+        margin-right: 5%;
+        padding: 1.5rem;
+        gap: 1.5rem;
+        display: none;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        border-radius: 0 0 0 10px;
+    }
+
+    .nav.active {
+        display: flex;
+    }
+
+    .nav a {
+        width: 100%;
+    }
+
+    .nav a:last-child {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+
+@media (max-width: 425px) {
 
     .sin-productos,
     .productos,
