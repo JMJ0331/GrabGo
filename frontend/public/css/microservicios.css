@@ -92,6 +92,7 @@ body {
     border-radius: 20px;
     padding: 0.8rem 1.6rem;
     font-size: 1.3rem;
+    text-decoration: none;
     cursor: pointer;
     display: flex;
     gap: 5px;
@@ -120,12 +121,13 @@ body {
 
 .btn-filtrar {
     background: #f3f3f3;
+    color: black;   
 }
 
 
 .estado-vacio {
     text-align: center;
-    margin-top: 100px;
+    margin-top: 10rem;
 }
 
 .icono {
@@ -137,11 +139,11 @@ body {
     justify-content: center;
     align-items: center;
     margin: auto;
-    font-size: 40px;
+    font-size: 4rem;
 }
 
 .estado-vacio h2 {
-    margin-top: 20px;
+    margin-top: 2rem;
     font-size: 2.4rem;
 }
 
@@ -151,30 +153,30 @@ body {
 }
 
 .acciones-vacio {
-    margin-top: 20px;
+    margin-top: 2rem;
     display: flex;
     justify-content: center;
-    gap: 10px;
+    gap: 1rem;
 }
 
 
 .grid {
-    margin-top: 30px;
+    margin-top: 3rem;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 25px;
+    gap: 2.5rem;
 }
 
 
 .card {
     background: white;
-    padding: 20px;
+    padding: 2rem;
     border-radius: 16px;
     box-shadow: 0 6px 15px rgba(0,0,0,0.08);
     display: flex;
     flex-direction: column;
     justify-content: center;
-    border-left: 6px solid transparent;
+    border-left: 5px solid transparent;
     min-height: 200px;
     transition: all 0.25s ease;
 }
@@ -191,24 +193,17 @@ body {
 
 
 .label {
-    font-size: 11px;
+    font-size: 1.4rem;
     color: #777;
-    margin-bottom: 2px;
+    margin-bottom: .2rem;
 }
 
 .valor-nombre,
-.valor-pago {
-    font-size: 14px;
+.valor-pago, .valor-estado, .valor-pedido {
+    font-size: 1.8rem;
     font-weight: bold;
-    margin-bottom: 12px;
+    margin-bottom: 1.2rem;
 }
-
-.valor-pedido {
-    font-size: 13px;
-    font-weight: bold;
-    margin-bottom: 12px;
-}
-
 
 .modo-eliminar .card {
     cursor: pointer;
@@ -281,14 +276,14 @@ body {
 .modal-header {
     background: linear-gradient(90deg, #f46a6a, #ff8a8a);
     color: white;
-    padding: 15px;
+    padding: 1.5rem;
     text-align: center;
     font-size: 1.8rem;
 }
 
 
 .modal-body {
-    padding: 20px;
+    padding: 2rem;
     display: flex;
     flex-direction: column;
 }
@@ -302,8 +297,8 @@ body {
 .modal-body input,
 .modal-body textarea,
 .modal-body select {
-    margin-bottom: 15px;
-    padding: 10px;
+    margin-bottom: 1.5rem;
+    padding: 1rem;
     border-radius: 10px;
     border: 2px solid #ddd;
     transition: 0.2s;
@@ -321,7 +316,7 @@ body {
 .btn-registrar {
     background: linear-gradient(135deg, #ff7b7b, #f46a6a);
     color: white;
-    padding: 12px;
+    padding: 1.2rem;
     border: none;
     border-radius: 10px;
     font-weight: bold;
@@ -348,7 +343,7 @@ body {
 .icono-wrapper {
     position: relative;
     width: 120px;
-    margin: 0 auto 20px;
+    margin: 0 auto 2rem;
 }
 
 .icono {
@@ -359,7 +354,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 40px;
+    font-size: 4rem;
     color: #f46a6a; /* 🔥 ROJO COMO FIGMA */
     box-shadow: 0 8px 20px rgba(0,0,0,0.1);
 }
@@ -379,7 +374,7 @@ body {
 
 .check i {
     color: white;
-    font-size: 16px;
+    font-size: 1.6rem;
 }
 
 
@@ -390,16 +385,16 @@ body {
 
 
 .cards-info {
-    margin-top: 50px;
+    margin-top: 5rem;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 25px;
+    gap: 2.5rem;
 }
 
 
 .info-card {
     background: #fff;
-    padding: 20px;
+    padding: 2rem;
     border-radius: 16px;
     text-align: left;
     box-shadow: 0 6px 15px rgba(0,0,0,0.05);
@@ -408,34 +403,34 @@ body {
 
 
 .info-card i {
-    font-size: 20px;
+    font-size: 2rem;
     color: #f46a6a;
 }
 
 
 .info-card h3 {
-    margin: 10px 0 5px;
-    font-size: 16px;
+    margin: 1rem 0 .5rem;
+    font-size: 1.6rem;
 }
 
 
 .info-card p {
-    font-size: 13px;
+    font-size: 1.3rem;
     color: #777;
 }
 
 
 .info-card a {
     display: inline-block;
-    margin-top: 10px;
-    font-size: 13px;
+    margin-top: 1rem;
+    font-size: 1.3rem;
     color: #f46a6a;
     text-decoration: none;
 }
 
 
 .barra {
-    margin-top: 10px;
+    margin-top: 1rem;
     height: 6px;
     background: #eee;
     border-radius: 10px;
@@ -480,9 +475,33 @@ body {
     color: white;
 }
 
+/* MEDIA QUERIES */
 
+@media (max-width: 1024px) {
+
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .cards-info {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
 
 @media (max-width: 768px) {
+
+    html{
+        font-size: 56.25%;
+    }
+    
+}
+
+@media (max-width: 520px) {
+
+    html{
+        font-size: 50%;
+    }
 
     body {
         align-items: flex-start;
@@ -509,8 +528,8 @@ body {
         width: 200px;
         flex-direction: column;
         align-items: flex-start;
-        padding: 15px;
-        gap: 15px;
+        padding: 1.5rem;
+        gap: 1.5rem;
         display: none;
         box-shadow: 0 10px 20px rgba(0,0,0,0.2);
         border-radius: 0 0 0 10px;
@@ -532,7 +551,7 @@ body {
    
     .acciones-modernas {
         flex-direction: column;
-        gap: 10px;
+        gap: 1rem;
         align-items: stretch;
     }
 
@@ -544,6 +563,7 @@ body {
   
     .grid {
         grid-template-columns: 1fr;
+        justify-content: center;
     }
 
     .cards-info {
@@ -564,17 +584,4 @@ body {
     .modal-content {
         width: 90%;
     }
-}
-
-
-@media (max-width: 1024px) {
-
-    .grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .cards-info {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
 }

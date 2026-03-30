@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <title>Grab&Go | Órdenes</title>
@@ -11,189 +12,161 @@
 
 <body>
 
-<div class="container">
+    <div class="container">
 
-   
-  <header class="header">
 
-    <div class="logo">
-        <a href="#">Grab&Go</a>
+        <header class="header">
+
+            <div class="logo">
+                <a href="#">Grab&Go</a>
+            </div>
+
+
+            <div id="menuToggle" class="menu-toggle">
+                <i class="ri-menu-line"></i>
+            </div>
+
+            <nav id="navMenu" class="nav">
+                <a href="ProductosApp.html">Productos</a>
+                <a href="OrdenesApp.html">Ordenes</a>
+                <a href="PagosApp.html">Pagos</a>
+                <a href="../index.html">Salir</a>
+            </nav>
+
+        </header>
+
+        <main class="contenido-col">
+
+            <!-- ACCIONES -->
+            <div class="acciones-modernas">
+                <div class="botones-izq">
+
+                    <button id="btnCrear" class="btn btn-crear">
+                        <i class="ri-add-line"></i> Crear
+                    </button>
+
+                    <button id="btnActualizar" class="btn btn-actualizar">
+                        <i class="ri-refresh-line"></i> Actualizar
+                    </button>
+
+                    <button id="btnEliminar" class="btn btn-eliminar">
+                        <i class="ri-delete-bin-line"></i> Eliminar
+                    </button>
+
+                </div>
+
+                <button id="btnFiltrar" class="btn btn-filtrar">
+                    <i class="ri-filter-3-line"></i> Filtrar
+                </button>
+            </div>
+
+
+            <div id="estadoVacio" class="estado-vacio">
+
+                <div class="icono-wrapper">
+                    <div class="icono">
+                        <i class="ri-restaurant-line"></i>
+                    </div>
+                    <div class="check">
+                        <i class="ri-check-line"></i>
+                    </div>
+                </div>
+
+                <h2>No hay órdenes</h2>
+
+                <p>
+                    Tu bandeja de entrada gastronómica está despejada.
+                    Las nuevas solicitudes aparecerán aquí cuando los clientes comiencen a pedir.
+                </p>
+
+                <div class="acciones-vacio">
+                    <button class="btn btn-crear">
+                        <i class="ri-refresh-line"></i> Refrescar Vista
+                    </button>
+
+                    <a href="PagosApp.html" class="btn btn-filtrar">
+                        <i class="ri-history-line"></i> Ver Historial
+                    </a>
+                </div>
+
+
+            </div>
+
+            <div class="grid" id="gridOrdenes"></div>
+
+        </main>
+
     </div>
 
-   
-    <div id="menuToggle" class="menu-toggle">
-        <i class="ri-menu-line"></i>
+
+    <div id="modalOrden" class="modal-overlay">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <h2>Nueva orden</h2>
+            </div>
+
+            <form id="formOrden" class="modal-body" method="post" action="">
+
+                <label>Cliente</label>
+                <input type="text" id="inputCliente" placeholder="Nombre del cliente">
+
+                <label>Pedido</label>
+                <textarea id="inputPedido" placeholder="Ej: 2 hamburguesas + refresco"></textarea>
+
+                <label>Método de pago</label>
+                <select id="inputPago">
+                    <option>Tarjeta de crédito</option>
+                    <option>Tarjeta de débito</option>
+                    <option>PayPal</option>
+                    <option>Apple Pay</option>
+                    <option>Google Pay</option>
+                </select>
+
+                <!-- 🔥 NUEVO -->
+                <label>Estado del pedido</label>
+                <select id="inputEstado">
+                    <option value="pendiente">Pendiente</option>
+                    <option value="proceso">En proceso</option>
+                    <option value="entregado">Entregado</option>
+                </select>
+
+                <button type="button" id="btnRegistrar" class="btn-registrar">
+                    Registrar orden
+                </button>
+
+            </form>
+
+        </div>
     </div>
+    <div id="modalFiltro" class="modal-overlay">
+        <div class="modal-content">
 
-    <nav id="navMenu" class="nav">
-        <a href="ProductosApp.html">Productos</a>
-        <a href="OrdenesApp.html">Ordenes</a>
-        <a href="PagosApp.html">Pagos</a>
-        <a href="../index.html">Salir</a>
-    </nav>
+            <div class="modal-header">
+                <h2>Filtrar pedidos</h2>
+            </div>
 
-</header>
+            <div class="modal-body">
 
-    <main class="contenido-col">
+                <label>Selecciona estado</label>
+                <select id="filtroEstado">
+                    <option value="todos">Todos</option>
+                    <option value="pendiente">Pendiente</option>
+                    <option value="proceso">En proceso</option>
+                    <option value="entregado">Entregado</option>
+                </select>
 
-        <!-- ACCIONES -->
-        <div class="acciones-modernas">
-            <div class="botones-izq">
-
-                <button id="btnCrear" class="btn btn-crear">
-                    <i class="ri-add-line"></i> Crear
-                </button>
-
-                <button id="btnActualizar" class="btn btn-actualizar">
-                    <i class="ri-refresh-line"></i> Actualizar
-                </button>
-
-                <button id="btnEliminar" class="btn btn-eliminar">
-                    <i class="ri-delete-bin-line"></i> Eliminar
+                <button id="btnAplicarFiltro" class="btn-registrar">
+                    Aplicar filtro
                 </button>
 
             </div>
 
-            <button id="btnFiltrar" class="btn btn-filtrar">
-                <i class="ri-filter-3-line"></i> Filtrar
-            </button>
-        </div>
-
-        
-     <div id="estadoVacio" class="estado-vacio">
-
-    <div class="icono-wrapper">
-        <div class="icono">
-            <i class="ri-restaurant-line"></i>
-        </div>
-        <div class="check">
-            <i class="ri-check-line"></i>
         </div>
     </div>
 
-    <h2>No hay órdenes</h2>
-
-    <p>
-        Tu bandeja de entrada gastronómica está despejada.
-        Las nuevas solicitudes aparecerán aquí cuando los clientes comiencen a pedir.
-    </p>
-
-    <div class="acciones-vacio">
-        <button class="btn btn-crear">
-            <i class="ri-refresh-line"></i> Refrescar Vista
-        </button>
-
-        <button class="btn btn-filtrar">
-            <i class="ri-history-line"></i> Ver Historial
-        </button>
-    </div>
-
-   
-    <div class="cards-info">
-
-        <div class="info-card">
-            <i class="ri-line-chart-line"></i>
-            <h3>Tendencias</h3>
-            <p>Explora los platos más pedidos de la semana pasada.</p>
-            <a href="#">Ir al reporte →</a>
-        </div>
-
-        <div class="info-card">
-            <i class="ri-timer-line"></i>
-            <h3>Rendimiento</h3>
-            <p>Tiempo promedio de preparación: 12 min.</p>
-
-            <div class="barra">
-                <div class="progreso"></div>
-            </div>
-        </div>
-
-        <div class="info-card premium">
-            <i class="ri-star-line"></i>
-            <h3>Savor Premium</h3>
-            <p>Desbloquea análisis avanzados y predicción de demanda con IA.</p>
-
-            <button class="btn-premium">Saber más</button>
-        </div>
-
-    </div>
-
-</div>
-
-        <div class="grid" id="gridOrdenes"></div>
-
-    </main>
-
-</div>
-
-
-<div id="modalOrden" class="modal-overlay">
-    <div class="modal-content">
-
-        <div class="modal-header">
-            <h2>Nueva orden</h2>
-        </div>
-
-        <form id="formOrden" class="modal-body">
-
-            <label>Cliente</label>
-           <input type="text" id="inputCliente" placeholder="Nombre del cliente">
-
-            <label>Pedido</label>
-            <textarea id="inputPedido" placeholder="Ej: 2 hamburguesas + refresco"></textarea>
-
-            <label>Método de pago</label>
-            <select id="inputPago">
-                <option>Tarjeta de crédito</option>
-                <option>Tarjeta de débito</option>
-                <option>PayPal</option>
-                <option>Apple Pay</option>
-                <option>Google Pay</option>
-            </select>
-
-            <!-- 🔥 NUEVO -->
-            <label>Estado del pedido</label>
-            <select id="inputEstado">
-                <option value="pendiente">Pendiente</option>
-                <option value="proceso">En proceso</option>
-                <option value="entregado">Entregado</option>
-            </select>
-
-            <button type="button" id="btnRegistrar" class="btn-registrar">
-                Registrar orden
-            </button>
-
-        </form>
-
-    </div>
-</div>
-<div id="modalFiltro" class="modal-overlay">
-    <div class="modal-content">
-
-        <div class="modal-header">
-            <h2>Filtrar pedidos</h2>
-        </div>
-
-        <div class="modal-body">
-
-            <label>Selecciona estado</label>
-            <select id="filtroEstado">
-                <option value="todos">Todos</option>
-                <option value="pendiente">Pendiente</option>
-                <option value="proceso">En proceso</option>
-                <option value="entregado">Entregado</option>
-            </select>
-
-            <button id="btnAplicarFiltro" class="btn-registrar">
-                Aplicar filtro
-            </button>
-
-        </div>
-
-    </div>
-</div>
-
-<script src="../js/modal.js"></script>
+    <script src="../js/modal.js"></script>
 
 </body>
+
 </html>

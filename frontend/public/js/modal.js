@@ -158,9 +158,9 @@ document.addEventListener('DOMContentLoaded', () => {
             const nuevaCard = document.createElement("div");
 
             const colores = {
-                pendiente: "border-naranja",
-                proceso: "border-verde",
-                entregado: "border-rojo"
+                pendiente: "border-rojo",
+                proceso: "border-naranja",
+                entregado: "border-verde"
             };
 
             nuevaCard.className = `card ${colores[estado]}`;
