@@ -19,7 +19,7 @@ export async function verifyLoginController(req, res) {
         const usuarioEncontradoClave = usuarioEncontrado.contrasena;
         const claveCorrecta = await bcrypt.compare(contrasena, usuarioEncontradoClave);
         if (seEncontroUsuario && claveCorrecta) {
-            const token = jwt.sign({ usuarioEncontrado }, SECRET, { expiresIn: '1m' });
+            const token = jwt.sign({ usuarioEncontrado }, SECRET, { expiresIn: '30m' });
             res.cookie("token", token, {
                 httpOnly: true,
                 sameSite: 'lax',
