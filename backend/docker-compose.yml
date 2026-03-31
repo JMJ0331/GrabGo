@@ -7,9 +7,9 @@ services:
       - "8080:8080" # El único puerto expuesto al mundo (o al frontend)
     environment:
       - AUTH_SERVICE_URL=http://auth:3001
-      - PRODUCTS_SERVICE_URL=http://products:3002
-      - ORDERS_SERVICE_URL=http://orders:3003
-      - PAYMENTS_SERVICE_URL=http://payments:3004
+      - ORDERS_SERVICE_URL=http://orders:3002
+      - PAYMENTS_SERVICE_URL=http://payments:3003
+      - PRODUCTS_SERVICE_URL=http://products:3004
     depends_on:
       - auth
       - products
@@ -24,22 +24,22 @@ services:
       - PORT=3001
       - JWT_SECRET=tu_clave_secreta_aqui
 
-  products:
-    build: ./products
+  orders:
+    build: ./orders
     ports:
       - "3002:3002"
     environment:
       - PORT=3002
 
-  orders:
-    build: ./orders
+  payments:
+    build: ./payments
     ports:
       - "3003:3003"
     environment:
       - PORT=3003
 
-  payments:
-    build: ./payments
+  products:
+    build: ./products
     ports:
       - "3004:3004"
     environment:

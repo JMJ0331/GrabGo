@@ -4,7 +4,7 @@ import { fileURLToPath } from "url";
 import bcrypt from "bcrypt";
 import config from "dotenv/config";
 import jwt from "jsonwebtoken";
-import db from './src/db/usuariosRegistrados.json' with { type: 'json' };
+import db from './src/db/ordenesRegistradas.json' with { type: 'json' };
 
 config;
 const app = express();

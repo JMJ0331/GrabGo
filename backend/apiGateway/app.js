@@ -21,7 +21,7 @@ app.use(express.static(path.join(__dirname, '../../frontend/public')));
 
 app.use('/auth', routerAuth);
 app.get('/inicio', authenticateToken, (req, res) => {
-    res.sendFile(path.join(__dirname, '../../frontend/public/html/inicioApp.html'));
+    res.sendFile(path.join(__dirname, '../../frontend/public/html/ProductosApp.html'));
 });
 
 app.listen(port, () => {

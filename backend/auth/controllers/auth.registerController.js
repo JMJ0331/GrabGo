@@ -6,9 +6,6 @@ import config from "dotenv/config";
 
 config;
 const SECRET = process.env.SECRET || 'grabGo';
-// export function generateToken() {
-
-// }
 
 export async function verifyLoginController(req, res) {
     const dbAuth = await readDB();

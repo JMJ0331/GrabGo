@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Grab&Go | Pagos</title>
     <link rel="stylesheet" href="../css/pagos.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
+
 </head>
 
 <body>
@@ -13,15 +15,22 @@
     <div class="container">
 
         <header class="header">
+
             <div class="logo">
-                <a href="inicioApp.html">Grab&Go</a>
+                <a href="#">Grab&Go</a>
             </div>
-            <nav class="nav">
+
+            <div id="menuToggle" class="menu-toggle">
+                <i class="ri-menu-line"></i>
+            </div>
+
+            <nav id="navMenu" class="nav">
                 <a href="ProductosApp.html">Productos</a>
                 <a href="OrdenesApp.html">Ordenes</a>
                 <a href="PagosApp.html">Pagos</a>
                 <a href="../index.html">Salir</a>
             </nav>
+
         </header>
 
         <div class="cabecera-carrito">
@@ -72,10 +81,11 @@
                     <div class="icono-placeholder"></div>
 
                     <div class="totales">
-                        <p>Sub-total: <span class="cantidad">RD$ <em id="sub-total">1000</em></span></p>
-                        <p>Envío: <span  class="cantidad">RD$ <em id="envio">1000</em></span></p>
-                        <p>Impuesto: <span class="cantidad">RD$ <em id="impuesto">200</em></span></p>
-                        <p>Monto total: <span id="resultado" class="cantidad">RD$ <em id="resultado">1200</em></span></p>
+                        <p>Sub-total: <span class="cantidad">RD$ <em id="sub-total"></em></span></p>
+                        <p>Envío: <span class="cantidad">RD$ <em id="envio"></em></span></p>
+                        <p>Impuesto: <span class="cantidad">RD$ <em id="impuesto"></em></span></p>
+                        <p>Monto total: <span id="resultado" class="cantidad">RD$ <em id="resultado"></em></span>
+                        </p>
                     </div>
 
                     <a href="TarjetaApp.html" class="btn">Proceder a pagar</a>
@@ -83,9 +93,9 @@
                     <div class="otros">
                         <p>Otros métodos</p>
                         <div class="metodos">
-                            <span role="button" class="btn-apple"></span>
-                            <span role="button" class="btn-google"></span>
-
+                            <a href="TarjetaApp.html"><span role="button" class="btn-apple"></span></a>
+                            <a href="TarjetaApp.html"><span role="button" class="btn-paypal"></span></a>
+                            <a href="TarjetaApp.html"><span role="button" class="btn-google"></span></a>
                         </div>
                     </div>
                 </div>
@@ -95,7 +105,7 @@
 
     </div>
 
-
+    <script src="../js/modal.js"></script>
 
 </body>
 

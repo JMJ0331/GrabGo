@@ -3,7 +3,6 @@
 
 html {
     font-size: 62.5%;
-    /* 1rem = 10px */
 }
 
 * {
@@ -24,7 +23,6 @@ body {
 
 
 .container {
-    height: auto;
     max-width: 1400px;
     width: 90%;
     display: flex;
@@ -271,7 +269,7 @@ body {
 /* Botones Apple/Google */
 .metodos {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
     gap: 1.5rem;
     border-top: 1px solid var(--blanco-500);
     padding-top: 1.5rem;
@@ -280,10 +278,10 @@ body {
 
 /* Contenedor de los logos de pago */
 .btn-apple,
-.btn-google {
+.btn-google, .btn-paypal {
     display: inline;
     width: 1rem;
-    padding: 3rem 4rem;
+    padding: 3rem 3rem;
     border-radius: 8px;
     background-color: white;
     cursor: pointer;
@@ -304,6 +302,10 @@ body {
 
 .btn-google {
     background-image: url('../images/google-pay-svgrepo-com.svg');
+}
+
+.btn-paypal{
+    background-image: url(../images/paypal-svgrepo-com.svg);
 }
 
 .menu-toggle {
@@ -375,12 +377,13 @@ body {
     /* NAV OCULTO */
     .nav {
         position: absolute;
-        top: 70px;
+        top: 55px;
         right: 0;
         background: var(--rojo-400);
-        width: 200px;
+        width: 120px;
         flex-direction: column;
         align-items: flex-start;
+        margin-right: 5%;
         padding: 1.5rem;
         gap: 1.5rem;
         display: none;
@@ -400,26 +403,10 @@ body {
         width: 100%;
         text-align: center;
     }
-
-
-    .acciones-modernas {
-        flex-direction: column;
-        gap: 1rem;
-        align-items: stretch;
-    }
-
-    .botones-izq {
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-
 }
 
 
 @media (max-width: 425px) {
-    :root {
-        font-size: 43.75%;
-    }
 
     .sin-productos,
     .productos,
