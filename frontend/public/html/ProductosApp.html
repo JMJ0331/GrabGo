@@ -3,9 +3,8 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Grab&Go | Órdenes</title>
+    <title>Grab&Go | Productos</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <link rel="stylesheet" href="../css/productos.css">
     <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
 </head>
@@ -15,429 +14,275 @@
     <div class="container">
 
         <header class="header">
-
             <div class="logo">
                 <a href="#">Grab&Go</a>
             </div>
-
-
             <div id="menuToggle" class="menu-toggle">
                 <i class="ri-menu-line"></i>
             </div>
-
             <nav id="navMenu" class="nav">
                 <a href="../html/ProductosApp.html">Productos</a>
                 <a href="../html/OrdenesApp.html">Ordenes</a>
                 <a href="../html/PagosApp.html">Pagos</a>
                 <a href="../index.html">Salir</a>
             </nav>
-
         </header>
 
         <main class="contenido-col">
 
-            <!-- ACCIONES -->
             <div class="acciones-modernas">
                 <div class="botones-izq">
-
                     <button id="btnCrear" class="btn btn-crear">
                         <i class="ri-add-line"></i> Crear
                     </button>
-
                     <button id="btnActualizar" class="btn btn-actualizar">
                         <i class="ri-refresh-line"></i> Actualizar
                     </button>
-
                     <button id="btnEliminar" class="btn btn-eliminar">
                         <i class="ri-delete-bin-line"></i> Eliminar
                     </button>
-
                 </div>
-
                 <button id="btnFiltrar" class="btn btn-filtrar">
                     <i class="ri-filter-3-line"></i> Filtrar
                 </button>
             </div>
 
-
-            <div id="estadoVacio" class="estado-vacio">
-
+            <div id="estadoVacio" class="estado-vacio" style="display:none;">
                 <div class="icono-wrapper">
-                    <div class="icono">
-                        <i class="ri-restaurant-line"></i>
-                    </div>
-                    <div class="check">
-                        <i class="ri-check-line"></i>
-                    </div>
+                    <div class="icono"><i class="ri-restaurant-line"></i></div>
+                    <div class="check"><i class="ri-check-line"></i></div>
                 </div>
-
                 <h2>No hay Productos</h2>
-
-                <p>
-                    No hay productos disponibles por el momento, lo sentimos mucho, en un momento estarán de vuelta.
-                </p>
-
+                <p>No hay productos disponibles por el momento.</p>
                 <div class="acciones-vacio">
-                    <button class="btn btn-crear">
+                    <button id="btnRefrescar" class="btn btn-crear">
                         <i class="ri-refresh-line"></i> Refrescar Vista
                     </button>
-
                     <a href="PagosApp.html" class="btn btn-filtrar">
                         <i class="ri-history-line"></i> Ver Historial
                     </a>
                 </div>
-
-
             </div>
 
+            <!-- Grid: las cards se generan dinámicamente desde productos.js -->
+            <!-- id="categoria" e id="costo" corregidos a class en todas las cards -->
             <div class="grid" id="gridOrdenes">
 
                 <div class="card" data-categoria="hamburguesas">
-
                     <div class="container-image">
                         <img src="../images/productos/download-removebg-preview.png" alt="">
                     </div>
-
                     <div class="container-info">
-
                         <h2 class="nombre-producto">Atomic Smoke</h2>
-                        <p class="descripcion-producto">Descripción: <span class="descripcion">Doble smash, aros de
-                                cebolla y miel de sriracha para un final explosivo.</span></p>
-                        <p class="categoria-producto">Categoría: <span id="categoria">hamburguesas</span>
-                        </p>
-
-                        <p class="precio">Precio (RD$): <span id="costo">780</span></p>
-
-
+                        <p class="descripcion-producto">Descripción: <span class="descripcion">Doble smash, aros de cebolla y miel de sriracha para un final explosivo.</span></p>
+                        <p class="categoria-producto">Categoría: <span class="categoria">hamburguesas</span></p>
+                        <p class="precio">Precio (RD$): <span class="costo">780</span></p>
                         <button class="btn-carrito">
-
-                            <img src="../images/productos/cart-arrow-down-svgrepo-com (1).svg" alt="Cart"
-                                class="btn-img">
+                            <img src="../images/productos/cart-arrow-down-svgrepo-com (1).svg" alt="Cart" class="btn-img">
                             Añadir al carrito
                         </button>
-
-
                     </div>
-
                 </div>
 
                 <div class="card" data-categoria="bebidas">
-
                     <div class="container-image">
                         <img src="../images/productos/cocacola.png" alt="Coca Cola">
                     </div>
-
                     <div class="container-info">
-
                         <h2 class="nombre-producto">Coca Cola</h2>
-                        <p class="descripcion-producto">Descripción: <span class="descripcion">Super refrescante.</span>
-                        </p>
-                        <p class="categoria-producto">Categoría: <span id="categoria">Bebidas</span>
-                        </p>
-
-                        <p class="precio">Precio (RD$): <span id="costo">780</span></p>
-
+                        <p class="descripcion-producto">Descripción: <span class="descripcion">Super refrescante.</span></p>
+                        <p class="categoria-producto">Categoría: <span class="categoria">Bebidas</span></p>
+                        <p class="precio">Precio (RD$): <span class="costo">780</span></p>
                         <button class="btn-carrito">
-
-                            <img src="../images/productos/cart-arrow-down-svgrepo-com (1).svg" alt="Cart"
-                                class="btn-img">
+                            <img src="../images/productos/cart-arrow-down-svgrepo-com (1).svg" alt="Cart" class="btn-img">
                             Añadir al carrito
                         </button>
-
-
                     </div>
-
                 </div>
 
                 <div class="card" data-categoria="hamburguesas">
-
                     <div class="container-image">
                         <img src="../images/productos/ham2 (2).png" alt="Furia Serrana">
                     </div>
-
                     <div class="container-info">
-
                         <h2 class="nombre-producto">Furia Serrana</h2>
-                        <p class="descripcion-producto">Descripción: <span class="descripcion">Costra de manchego y
-                                serranos tatemados sobre una base de guacamole rebelde.</span></p>
-                        <p class="categoria-producto">Categoría: <span id="categoria">Hamburguesas</span>
-                        </p>
-
-                        <p class="precio">Precio (RD$): <span id="costo">570</span></p>
-
+                        <p class="descripcion-producto">Descripción: <span class="descripcion">Costra de manchego y serranos tatemados sobre una base de guacamole rebelde.</span></p>
+                        <p class="categoria-producto">Categoría: <span class="categoria">Hamburguesas</span></p>
+                        <p class="precio">Precio (RD$): <span class="costo">570</span></p>
                         <button class="btn-carrito">
-
-                            <img src="../images/productos/cart-arrow-down-svgrepo-com (1).svg" alt="Cart"
-                                class="btn-img">
+                            <img src="../images/productos/cart-arrow-down-svgrepo-com (1).svg" alt="Cart" class="btn-img">
                             Añadir al carrito
                         </button>
-
-
                     </div>
-
                 </div>
 
                 <div class="card" data-categoria="bebidas">
-
                     <div class="container-image">
                         <img src="../images/productos/pepsi.png" alt="Pepsi">
                     </div>
-
                     <div class="container-info">
-
                         <h2 class="nombre-producto">Pepsi</h2>
-                        <p class="descripcion-producto">Descripción: <span class="descripcion">Hace un gran
-                                combo.</span>
-                        </p>
-                        <p class="categoria-producto">Categoría: <span id="categoria">Bebidas</span>
-                        </p>
-
-                        <p class="precio">Precio (RD$): <span id="costo">75</span></p>
-
+                        <p class="descripcion-producto">Descripción: <span class="descripcion">Hace un gran combo.</span></p>
+                        <p class="categoria-producto">Categoría: <span class="categoria">Bebidas</span></p>
+                        <p class="precio">Precio (RD$): <span class="costo">75</span></p>
                         <button class="btn-carrito">
-
-                            <img src="../images/productos/cart-arrow-down-svgrepo-com (1).svg" alt="Cart"
-                                class="btn-img">
+                            <img src="../images/productos/cart-arrow-down-svgrepo-com (1).svg" alt="Cart" class="btn-img">
                             Añadir al carrito
                         </button>
-
-
                     </div>
-
                 </div>
 
                 <div class="card" data-categoria="hamburguesas">
-
                     <div class="container-image">
                         <img src="../images/productos/ham3.png" alt="La diabla">
                     </div>
-
                     <div class="container-info">
-
                         <h2 class="nombre-producto">La Diabla</h2>
-                        <p class="descripcion-producto">Descripción: <span class="descripcion">Chipotle ahumado, chorizo
-                                crujiente y jalapeños que no piden perdón.</span></p>
-                        <p class="categoria-producto">Categoría: <span id="categoria">hamburguesas</span>
-                        </p>
-
-                        <p class="precio">Precio (RD$): <span id="costo">570</span></p>
-
+                        <p class="descripcion-producto">Descripción: <span class="descripcion">Chipotle ahumado, chorizo crujiente y jalapeños que no piden perdón.</span></p>
+                        <p class="categoria-producto">Categoría: <span class="categoria">hamburguesas</span></p>
+                        <p class="precio">Precio (RD$): <span class="costo">570</span></p>
                         <button class="btn-carrito">
-
-                            <img src="../images/productos/cart-arrow-down-svgrepo-com (1).svg" alt="Cart"
-                                class="btn-img">
+                            <img src="../images/productos/cart-arrow-down-svgrepo-com (1).svg" alt="Cart" class="btn-img">
                             Añadir al carrito
                         </button>
-
-
                     </div>
-
                 </div>
 
                 <div class="card" data-categoria="hamburguesas">
-
                     <div class="container-image">
                         <img src="../images/productos/ham4.png" alt="Eco-Smash">
                     </div>
-
                     <div class="container-info">
-
                         <h2 class="nombre-producto">Eco-Smash</h2>
-                        <p class="descripcion-producto">Descripción: <span class="descripcion">Base de camote y frijol
-                                negro con un vibrante toque de mango y cilantro.</span></p>
-                        <p class="categoria-producto">Categoría: <span id="categoria">hamburguesas</span>
-                        </p>
-
-                        <p class="precio">Precio (RD$): <span id="costo">570</span></p>
-
+                        <p class="descripcion-producto">Descripción: <span class="descripcion">Base de camote y frijol negro con un vibrante toque de mango y cilantro.</span></p>
+                        <p class="categoria-producto">Categoría: <span class="categoria">hamburguesas</span></p>
+                        <p class="precio">Precio (RD$): <span class="costo">570</span></p>
                         <button class="btn-carrito">
-
-                            <img src="../images/productos/cart-arrow-down-svgrepo-com (1).svg" alt="Cart"
-                                class="btn-img">
+                            <img src="../images/productos/cart-arrow-down-svgrepo-com (1).svg" alt="Cart" class="btn-img">
                             Añadir al carrito
                         </button>
-
-
                     </div>
-
                 </div>
 
                 <div class="card" data-categoria="bebidas">
-
                     <div class="container-image">
                         <img src="../images/productos/ec_dasani_original-removebg-preview.png" alt="Botella Dasani">
                     </div>
-
                     <div class="container-info">
-
                         <h2 class="nombre-producto">Agua</h2>
-                        <p class="descripcion-producto">Descripción: <span class="descripcion">Muy refrescante.</span>
-                        </p>
-                        <p class="categoria-producto">Categoría: <span id="categoria">Bebidas</span>
-                        </p>
-
-                        <p class="precio">Precio (RD$): <span id="costo">30</span></p>
-
+                        <p class="descripcion-producto">Descripción: <span class="descripcion">Muy refrescante.</span></p>
+                        <p class="categoria-producto">Categoría: <span class="categoria">Bebidas</span></p>
+                        <p class="precio">Precio (RD$): <span class="costo">30</span></p>
                         <button class="btn-carrito">
-
-                            <img src="../images/productos/cart-arrow-down-svgrepo-com (1).svg" alt="Cart"
-                                class="btn-img">
+                            <img src="../images/productos/cart-arrow-down-svgrepo-com (1).svg" alt="Cart" class="btn-img">
                             Añadir al carrito
                         </button>
-
-
                     </div>
-
                 </div>
 
                 <div class="card" data-categoria="hamburguesas">
-
                     <div class="container-image">
                         <img src="../images/productos/ham5.png" alt="Native Soul">
                     </div>
-
                     <div class="container-info">
-
                         <h2 class="nombre-producto">Native Soul</h2>
-                        <p class="descripcion-producto">Descripción: <span class="descripcion">Sabores de origen:
-                                portobello, cebolla morada y salsa de chiles dulces.</span></p>
-                        <p class="categoria-producto">Categoría: <span id="categoria">hamburguesas</span>
-                        </p>
-
-                        <p class="precio">Precio (RD$): <span id="costo">570</span></p>
-
+                        <p class="descripcion-producto">Descripción: <span class="descripcion">Sabores de origen: portobello, cebolla morada y salsa de chiles dulces.</span></p>
+                        <p class="categoria-producto">Categoría: <span class="categoria">hamburguesas</span></p>
+                        <p class="precio">Precio (RD$): <span class="costo">570</span></p>
                         <button class="btn-carrito">
-
-                            <img src="../images/productos/cart-arrow-down-svgrepo-com (1).svg" alt="Cart"
-                                class="btn-img">
+                            <img src="../images/productos/cart-arrow-down-svgrepo-com (1).svg" alt="Cart" class="btn-img">
                             Añadir al carrito
                         </button>
-
-
                     </div>
-
                 </div>
 
                 <div class="card" data-categoria="complementos">
-
                     <div class="container-image">
                         <img src="../images/productos/papa1.png" alt="Papas fritas">
                     </div>
-
                     <div class="container-info">
-
-                        <h2 class="nombre-producto">Golden Cruch</h2>
-                        <p class="descripcion-producto">Descripción: <span class="descripcion">Papas de corte fino,
-                                doble fritura y el punto exacto de sal marina.</span></p>
-                        <p class="categoria-producto">Categoría: <span id="categoria">Complementos</span>
-                        </p>
-
-                        <p class="precio">Precio (RD$): <span id="costo">570</span></p>
-
+                        <h2 class="nombre-producto">Golden Crunch</h2>
+                        <p class="descripcion-producto">Descripción: <span class="descripcion">Papas de corte fino, doble fritura y el punto exacto de sal marina.</span></p>
+                        <p class="categoria-producto">Categoría: <span class="categoria">Complementos</span></p>
+                        <p class="precio">Precio (RD$): <span class="costo">570</span></p>
                         <button class="btn-carrito">
-
-                            <img src="../images/productos/cart-arrow-down-svgrepo-com (1).svg" alt="Cart"
-                                class="btn-img">
+                            <img src="../images/productos/cart-arrow-down-svgrepo-com (1).svg" alt="Cart" class="btn-img">
                             Añadir al carrito
                         </button>
-
-
                     </div>
-
                 </div>
 
-
                 <div class="card" data-categoria="complementos">
-
                     <div class="container-image">
                         <img src="../images/productos/papa2.png" alt="Papas fritas">
                     </div>
-
                     <div class="container-info">
-
                         <h2 class="nombre-producto">Bacon Glory</h2>
-                        <p class="descripcion-producto">Descripción: <span class="descripcion">Cargadas con trozos de
-                            tocino ahumado ultra crujiente y un toque de ranch.</span></p>
-                        <p class="categoria-producto">Categoría: <span id="categoria">Complementos</span>
-                        </p>
-
-                        <p class="precio">Precio (RD$): <span id="costo">570</span></p>
-
+                        <p class="descripcion-producto">Descripción: <span class="descripcion">Cargadas con trozos de tocino ahumado ultra crujiente y un toque de ranch.</span></p>
+                        <p class="categoria-producto">Categoría: <span class="categoria">Complementos</span></p>
+                        <p class="precio">Precio (RD$): <span class="costo">570</span></p>
                         <button class="btn-carrito">
-
-                            <img src="../images/productos/cart-arrow-down-svgrepo-com (1).svg" alt="Cart"
-                                class="btn-img">
+                            <img src="../images/productos/cart-arrow-down-svgrepo-com (1).svg" alt="Cart" class="btn-img">
                             Añadir al carrito
                         </button>
-
-
                     </div>
-
                 </div>
 
+            </div>
+
+        </main>
     </div>
 
-    </main>
-
-    </div>
-
-
+    <!-- Modal crear/actualizar producto -->
     <div id="modalOrden" class="modal-overlay">
         <div class="modal-content">
-
             <div class="modal-header">
                 <h2>Nuevo Producto</h2>
             </div>
-
-            <form id="formOrden" class="modal-body" method="post" action="">
-
+            <!-- Sin action ni method: lo maneja productos.js con fetch -->
+            <div id="formOrden" class="modal-body">
                 <label>Nombre del producto</label>
-                <input type="text" id="inputProducto" placeholder="producto">
+                <input type="text" id="inputProducto" placeholder="Nombre del producto">
 
                 <label>Descripción</label>
                 <textarea id="inputDescripcion" placeholder="Ej: muy buena combo."></textarea>
 
                 <label>Categoría</label>
                 <select id="inputCategoria">
-                    <option>Hamburguesas</option>
-                    <option>Bebidas</option>
-                    <option>Complementos</option>
+                    <option value="hamburguesas">Hamburguesas</option>
+                    <option value="bebidas">Bebidas</option>
+                    <option value="complementos">Complementos</option>
                 </select>
 
-                <label>Precio del producto</label>
-                <textarea id="inputPrecio"></textarea>
+                <!-- Cambiado de textarea a input number para que el backend reciba número -->
+                <label>Precio del producto (RD$)</label>
+                <input type="number" id="inputPrecio" placeholder="Ej: 350" min="1">
 
                 <button type="button" id="btnRegistrar" class="btn-registrar">
                     Registrar producto
                 </button>
-
-            </form>
-
+            </div>
         </div>
     </div>
+
+    <!-- Modal filtro -->
     <div id="modalFiltro" class="modal-overlay">
         <div class="modal-content">
-
             <div class="modal-header">
-                <h2>Filtrar pedidos</h2>
+                <h2>Filtrar productos</h2>
             </div>
-
             <div class="modal-body">
-
-                <label>Selecciona estado</label>
+                <label>Selecciona categoría</label>
                 <select id="filtroEstado">
                     <option value="todos">Todos</option>
                     <option value="hamburguesas">Hamburguesas</option>
                     <option value="bebidas">Bebidas</option>
                     <option value="complementos">Complementos</option>
                 </select>
-
                 <button id="btnAplicarFiltro" class="btn-registrar">
                     Aplicar filtro
                 </button>
-
             </div>
-
         </div>
     </div>
 

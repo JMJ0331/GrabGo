@@ -5,35 +5,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/formularios.css">
-    <title>Grab&Go | Registro</title>
+    <title>Grab&Go | Pago con Tarjeta</title>
 </head>
 
 <body>
 
-    <!-- Tarjeta -->
-
     <div class="container">
 
-        <form action="/registro" method="post" id="registerForm" method="post" class="formulario">
+        <!-- action="/registro" eliminado — lo maneja tarjeta.js con fetch a /api/pagos -->
+        <form id="tarjetaForm" class="formulario">
 
             <h1 class="tituloPrincipal">Grab & Go</h1>
 
             <div class="container-input">
-                <label for="userName" class="nombreInput">Nombre del titular</label>
-                <input type="text" id="userName" name="userName" class="datos" placeholder="Jhon Doe" required>
-    
+                <label for="titular" class="nombreInput">Nombre del titular</label>
+                <input type="text" id="titular" name="titular" class="datos"
+                    placeholder="John Doe" required>
             </div>
 
             <div class="container-input">
                 <label for="numeracion" class="nombreInput">N° de tarjeta</label>
-                <input type="text" id="numeracion" name="numeracion" class="datos" placeholder="1234 5678 1234 5678" inputmode="numeric" required   minlength="15" maxlength="19" autocomplete="off">
-                
+                <input type="text" id="numeracion" name="numeracion" class="datos"
+                    placeholder="1234 5678 1234 5678"
+                    inputmode="numeric" required minlength="15" maxlength="19" autocomplete="off">
             </div>
 
-            <label for="nvv" class="nombreInput">NVV</label>
-            <input type="password" id="nvv" name="nvv" placeholder="Ingrese su código" class="datos"
-                required minlength="3" maxlength="3" inputmode="numeric">
-            <button type="submit" id="btnEnviar">Confirmar</button>
+            <div class="container-input">
+                <label for="nvv" class="nombreInput">NVV</label>
+                <input type="password" id="nvv" name="nvv" class="datos"
+                    placeholder="Ingrese su código"
+                    required minlength="3" maxlength="3" inputmode="numeric">
+            </div>
+
+            <p id="errorGeneral" class="error"></p>
+
+            <button type="submit" id="btnEnviar">Confirmar pago</button>
 
         </form>
     </div>
