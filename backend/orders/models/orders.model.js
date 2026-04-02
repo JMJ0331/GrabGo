@@ -6,7 +6,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 // Ruta anclada al archivo, no al proceso
-const dbPath = path.join(__dirname, "../db/metodoPagosRegistrados.json");
+const dbPath = path.join(__dirname, "../db/ordenesRegistradas.json");
 
 export async function readDB() {
     const data = await readFile(dbPath, "utf-8");

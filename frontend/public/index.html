@@ -4,43 +4,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/formularios.css">
-    <title>GrabGo | Login</title>
-   
+    <link rel="stylesheet" href="./css/formularios.css">
+    <title>Grab&Go | Login</title>
 </head>
 
 <body>
 
     <div class="container">
 
-        <form action="/auth/login" method="post" id="loginForm" class="formulario">
+        <!-- action y method eliminados — el submit lo maneja index.js con fetch -->
+        <form id="loginForm" class="formulario">
 
             <h1 class="tituloPrincipal">Grab & Go</h1>
 
             <div class="container-input">
-
                 <label for="userName" class="nombreInput">Usuario</label>
-                <input type="text" id="userName" class="datos" name="userName" placeholder="Usuario" required
-                    autocomplete="off">
-             <p id="errorUsuario" class="error"></p>
+                <input type="text" id="userName" name="userName" class="datos"
+                    placeholder="Ingrese su usuario" required>
+                <p id="errorUsuario" class="error"></p>
             </div>
 
             <div class="container-input">
-
-            <label for="contrasena" class="nombreInput">Contraseña</label>
-            <input type="password" id="contrasena" name="contrasena" placeholder="Contraseña" required class="datos">
-            <p id="errorContrasena" class="error"></p>
-            <button type="submit" id="btnEnviar">Iniciar sesión</button>
-            
-            <a href="./html/registerApp.html" class="redireccion">
-                ¿No tienes una cuenta?
-            </a>
+                <label for="contrasena" class="nombreInput">Contraseña</label>
+                <input type="password" id="contrasena" name="contrasena" class="datos"
+                    placeholder="Ingrese su contraseña" required minlength="5">
+                <p id="errorContrasena" class="error"></p>
             </div>
+
+            <p id="errorGeneral" class="error"></p>
+
+            <button type="submit" id="btnEnviar">Ingresar</button>
+
+            <a href="./html/registro.html" class="redireccion">
+                ¿No tienes una cuenta? Regístrate
+            </a>
 
         </form>
     </div>
 
-    <!-- <script src="js/index.js"></script> -->
+    <script src="./js/index.js"></script>
 
 </body>
 

@@ -1,27 +1,26 @@
 import express from "express";
 import path, { dirname } from "path";
 import { fileURLToPath } from "url";
-import bcrypt from "bcrypt";
-import config from "dotenv/config";
-import jwt from "jsonwebtoken";
-import db from './src/db/usuariosRegistrados.json' with { type: 'json' };
+import 'dotenv/config';
+import { routerAuth } from './src/routes/auth.routes.js';
 
-config;
 const app = express();
-const port = process.env.PORT;
+const port = process.env.PORT || 3001;
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
-app.use(express.json())
+app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, '/src')));
 
+// Rutas de autenticación
+app.use('/auth', routerAuth);
+
+// Health check
 app.get('/', (req, res) => {
-    res.send('Auth');
+    res.json({ service: 'AuthService', status: 'running' });
 });
 
 app.listen(port, () => {
-    console.log(`Auth esta ejecutandose... http://localhost:${port}`);
+    console.log(`AuthService ejecutándose en http://localhost:${port}`);
 });
-
-console.log(db);

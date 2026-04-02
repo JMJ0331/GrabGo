@@ -7,7 +7,6 @@
     <title>Grab&Go | Pagos</title>
     <link rel="stylesheet" href="../css/pagos.css">
     <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
-
 </head>
 
 <body>
@@ -15,80 +14,45 @@
     <div class="container">
 
         <header class="header">
-
             <div class="logo">
                 <a href="#">Grab&Go</a>
             </div>
-
             <div id="menuToggle" class="menu-toggle">
                 <i class="ri-menu-line"></i>
             </div>
-
             <nav id="navMenu" class="nav">
                 <a href="ProductosApp.html">Productos</a>
                 <a href="OrdenesApp.html">Ordenes</a>
                 <a href="PagosApp.html">Pagos</a>
                 <a href="../index.html">Salir</a>
             </nav>
-
         </header>
 
         <div class="cabecera-carrito">
-            <h2>Total de productos añadidos: <span class="cantidad">0</span></h2>
+            <h2>Total de productos añadidos: <span class="cantidad" id="totalProductos">0</span></h2>
         </div>
 
         <main class="contenido">
 
-            <div class="sin-productos">
-                <h1>Los productos que agregues se veran aquí</h1>
+            <div class="sin-productos" id="sinProductos">
+                <h1>Los productos que agregues se verán aquí</h1>
                 <p>Ir a <a href="ProductosApp.html" class="redireccion">Productos</a></p>
             </div>
 
-            <section class="productos">
-
-                <div class="producto-item">
-                    <div class="img-placeholder"></div>
-                    <div class="info">
-                        <h3>Hamburguesa de lomo</h3>
-                        <p>Cantidad: <span class="cantidad"></span>3</p>
-                        <p>Precio total: <span></span>RD$340</p>
-                        <div class="acciones">
-                            <a href="#">Eliminar</a>
-                            <span>|</span>
-                            <a href="#">Compartir</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="producto-item">
-                    <div class="img-placeholder"></div>
-                    <div class="info">
-                        <h3>Hamburguesa de lomo</h3>
-                        <p>Cantidad: <span class="cantidad"></span>3</p>
-                        <p>Precio total: <span></span>RD$340</p>
-                        <div class="acciones">
-                            <a href="#">Eliminar</a>
-                            <span>|</span>
-                            <a href="#">Compartir</a>
-                        </div>
-                    </div>
-                </div>
-
-            </section>
+            <!-- Los items del carrito se generan dinámicamente desde pagos.js -->
+            <section class="productos" id="listaCarrito"></section>
 
             <aside class="resumen">
                 <div class="resumen-box">
                     <div class="icono-placeholder"></div>
-
                     <div class="totales">
-                        <p>Sub-total: <span class="cantidad">RD$ <em id="sub-total"></em></span></p>
-                        <p>Envío: <span class="cantidad">RD$ <em id="envio"></em></span></p>
-                        <p>Impuesto: <span class="cantidad">RD$ <em id="impuesto"></em></span></p>
-                        <p>Monto total: <span id="resultado" class="cantidad">RD$ <em id="resultado"></em></span>
-                        </p>
+                        <p>Sub-total: <span class="cantidad">RD$ <em id="sub-total">0</em></span></p>
+                        <p>Envío: <span class="cantidad">RD$ <em id="envio">0</em></span></p>
+                        <p>Impuesto: <span class="cantidad">RD$ <em id="impuesto">0</em></span></p>
+                        <p>Monto total: <span class="cantidad">RD$ <em id="resultado">0</em></span></p>
                     </div>
 
-                    <a href="TarjetaApp.html" class="btn">Proceder a pagar</a>
+                    <a href="TarjetaApp.html" class="btn" id="btnProceder">Proceder a pagar</a>
 
                     <div class="otros">
                         <p>Otros métodos</p>
@@ -105,7 +69,8 @@
 
     </div>
 
-    <script src="../js/modal.js"></script>
+    <!-- Script propio de pagos (antes cargaba modal.js por error) -->
+    <script src="../js/pagos.js"></script>
 
 </body>
 
