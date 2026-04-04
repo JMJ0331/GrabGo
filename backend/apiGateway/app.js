@@ -3,8 +3,8 @@ import path, { dirname } from "path";
 import { fileURLToPath } from "url";
 import 'dotenv/config';
 import cookieParser from 'cookie-parser';
-import { authenticateToken } from "../apiGateway/middlewares/jwt.middleware.js";
-import { routerGateway } from "../apiGateway/routes/apiGateway.routes.js";
+import { authenticateToken } from "./middlewares/jwt.middleware.js";
+import { routerGateway } from "./routes/apiGateway.routes.js";
 
 const app = express();
 const port = process.env.PORT || 8080;

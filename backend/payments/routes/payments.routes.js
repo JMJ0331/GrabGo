@@ -1,6 +1,6 @@
 import { Router } from "express";
 import { procesarPago, getPagos, getPagoById } from "../controllers/payments.controller.js";
-import { verifyToken } from "../middlewares/auth.middleware.js";
+import { verifyToken } from "../auth.middleware.js";
 
 export const routerPagos = Router();
 

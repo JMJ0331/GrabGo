@@ -1,9 +1,9 @@
 import express from "express";
 import 'dotenv/config';
-import { routerOrders } from "./src/routes/orders.routes.js";
+import { routerOrders } from "./routes/orders.routes.js";
 
 const app = express();
-const port = process.env.PORT || 3003;
+const port = process.env.PORT || 3002;
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));

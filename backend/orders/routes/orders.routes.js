@@ -5,7 +5,7 @@ import {
     getOrderById,
     updateOrderStatus
 } from "../controllers/orders.controller.js";
-import { verifyToken } from "../middlewares/auth.middleware.js";
+import { verifyToken } from "../auth.middleware.js";
 
 export const routerOrders = Router();
 

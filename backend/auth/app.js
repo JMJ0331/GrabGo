@@ -2,7 +2,7 @@ import express from "express";
 import path, { dirname } from "path";
 import { fileURLToPath } from "url";
 import 'dotenv/config';
-import { routerAuth } from './src/routes/auth.routes.js';
+import { routerAuth } from './routes/auth.routes.js';
 
 const app = express();
 const port = process.env.PORT || 3001;

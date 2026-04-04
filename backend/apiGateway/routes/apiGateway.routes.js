@@ -5,9 +5,9 @@ export const routerGateway = Router();
 
 // URLs de los microservicios (configurables por .env)
 const AUTH_URL     = process.env.AUTH_SERVICE_URL     || "http://localhost:3001";
-const PRODUCTS_URL = process.env.PRODUCTS_SERVICE_URL || "http://localhost:3002";
-const ORDERS_URL   = process.env.ORDERS_SERVICE_URL   || "http://localhost:3003";
-const PAYMENTS_URL = process.env.PAYMENTS_SERVICE_URL || "http://localhost:3004";
+const PRODUCTS_URL = process.env.PRODUCTS_SERVICE_URL || "http://localhost:3004";
+const ORDERS_URL   = process.env.ORDERS_SERVICE_URL   || "http://localhost:3002";
+const PAYMENTS_URL = process.env.PAYMENTS_SERVICE_URL || "http://localhost:3003";
 
 // Helper: reenvía la petición a un microservicio y devuelve la respuesta
 async function proxyRequest(req, res, targetUrl) {
