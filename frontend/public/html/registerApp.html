@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
@@ -10,29 +10,36 @@
 
 <body>
 
-    <!-- Registro -->
-
     <div class="container">
 
-        <form action="/auth/register" method="post" id="registerForm" method="post" class="formulario">
+        <!-- action y method eliminados — el submit lo maneja registro.js con fetch -->
+        <form id="registerForm" class="formulario">
 
             <h1 class="tituloPrincipal">Grab & Go</h1>
 
             <div class="container-input">
                 <label for="userName" class="nombreInput">Nombre</label>
-                <input type="text" id="userName" name="userName" class="datos" placeholder="Ingrese su nombre" required>
+                <input type="text" id="userName" name="userName" class="datos"
+                    placeholder="Ingrese su nombre" required>
                 <p id="errorUsuario" class="error"></p>
             </div>
 
             <div class="container-input">
                 <label for="correo" class="nombreInput">Correo</label>
-                <input type="text" id="correo" name="correo" class="datos" placeholder="Ingrese su correo" required>
+                <input type="text" id="correo" name="correo" class="datos"
+                    placeholder="Ingrese su correo" required>
                 <p id="errorCorreo" class="error"></p>
             </div>
 
-            <label for="contrasena" class="nombreInput">Contraseña:</label>
-            <input type="password" id="contrasena" name="contrasena" placeholder="Ingrese su contraseña" class="datos" required minlength="5">
-               <p id="errorContrasena" class="error"></p>
+            <div class="container-input">
+                <label for="contrasena" class="nombreInput">Contraseña</label>
+                <input type="password" id="contrasena" name="contrasena" class="datos"
+                    placeholder="Ingrese su contraseña" required minlength="5">
+                <p id="errorContrasena" class="error"></p>
+            </div>
+
+            <p id="errorGeneral" class="error"></p>
+
             <button type="submit" id="btnEnviar">Registrarse</button>
 
             <a href="../index.html" class="redireccion">
@@ -42,7 +49,8 @@
         </form>
     </div>
 
-    <!-- <script src="../js/registo.js"></script> -->
+    <!-- Script descomentado y nombre corregido: "registo.js" → "registro.js" -->
+    <script src="../js/registro.js"></script>
 
 </body>
 

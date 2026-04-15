@@ -1,27 +1,21 @@
 import express from "express";
-import path, { dirname } from "path";
-import { fileURLToPath } from "url";
-import bcrypt from "bcrypt";
-import config from "dotenv/config";
-import jwt from "jsonwebtoken";
-import db from './src/db/ordenesRegistradas.json' with { type: 'json' };
+import 'dotenv/config';
+import { routerOrders } from "./routes/orders.routes.js";
 
-config;
 const app = express();
-const port = process.env.PORT;
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
+const port = process.env.PORT || 3002;
 
-app.use(express.json())
+app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(express.static(path.join(__dirname, '/src')));
 
-app.get('/', (req, res) => {
-    res.send('Orders');
+// Rutas de órdenes
+app.use("/orders", routerOrders);
+
+// Health check
+app.get("/", (req, res) => {
+    res.json({ service: "OrdersService", status: "running" });
 });
 
 app.listen(port, () => {
-    console.log(`Orders esta ejecutandose... http://localhost:${port}`);
+    console.log(`OrdersService ejecutándose en http://localhost:${port}`);
 });
-
-console.log(db);
